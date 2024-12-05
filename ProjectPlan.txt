@@ -1,0 +1,89 @@
+**Here are the specific components for the challenge:**
+
+* React considerations
+    o-The only state I should have to manage is 'active' vs 'complete'
+    o-I think most of this assignment is trying to teach DB connection
+        with React.  - state seems secondary (perhaps not needed)
+    o-I will create in the INDEX - input box, header and table
+        (think of this as 'hard coded structure')
+    o-I should create a component that is a <tr> it should have:
+        HTML - tableData of: taskDescription, ID#, button delete, 
+        and button 'complete'
+* DB connections
+    0-Server Side
+        O-Set up methods for 
+            o-Fetching all the tasks (read)
+            o-Pushing a new task to the DB (Create)
+            o-Changing the status of a task to 'complete'(update)
+            o-Deleteing a task (delete)
+        O-Set up Axios requests for
+            o-Fetching all the tasks (read)
+            o-Pushing a new task to the DB (Create)
+            o-Changing the status of a task to 'complete'(update)
+            o-Deleteing a task (delete)
+* Set up process
+    1-Database set up
+        -Create DB and table
+        -Define columns (and column attributes)
+         o-Task should have an ID, a description, and a status
+            o-id should be serial
+            o-description is user defined
+            o-status defaults to "active" or "notcomplete" - true is active, false is complete
+        -Create 3 rows of table data
+         o-Task: Shoot Mariah Carey (metaphorically): active
+         o-Task: Buy Cotton Candy
+         o-Task: Crawl that dungeon! 
+    2-Install client side software (NPM install)
+    3-Start the client connection NPM RUN client
+    4-DONE!Start the server side (separate tab) NPM RUN SERVER
+    4-DONE! Make sure file tree is what you want -as of oct10,9:18am - I think it is!
+* ORDER OF OPERATIONS
+    1- Start with a 'GET' request for getting the task list down from the server.
+        o-Get the server methods up for a "get request"
+            x- this should include a database call - is it a loop?  what is it exactly?
+            x- it should also be set up for the axios request
+        o-Get the axios request connected to the server methods
+        o-Create the details in the app.jsx - the "return/render" and supporting code for 
+            the return.
+    QUESTION - Should I hard code anything in Index.html?  I'm thinking no... but...hmmm.
+    
+
+    
+XXX -Questions...
+1-What does Pool have to do with this?
+2-Install server side software (HOW???)
+
+-----I wrote this without considerations for React...
+* Create a front end experience that allows a user to create a Task.
+--HTML 
+    o-Input for task, length of approx 100 char
+    o-Enter button - onclick calls the "SendToDatabase" function
+    o-Task should have an ID, a description, and a status
+        o-id should be serial
+        o-description is user defined
+        o-status defaults to "active" or "notcomplete" - true is active, false is complete
+    o-We will need a div to hold the array that is pushed to the DOM, use an ID for this place
+        --Big question below.
+* When the Task is created, it should be stored inside of a database (SQL)
+    o-To do this we will need a "put" from axios, and we will need the server
+--
+* Whenever a Task is created the front end should refresh to show all tasks that need to be completed.
+* Each Task should have an option to 'Complete' or 'Delete'.
+* When a Task is complete, its visual representation should change on the front end. For example, the background of the task container could change from gray to green. The complete option should be  'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete.
+* Whether or not a Task is complete should also be stored in the database.
+* Deleting a Task should remove it both from the front end as well as the Database.
+
+--Set up process--
+1- Create the database - columns are "ID" Serial, "TaskDescription" Char length 100, Status "IsActive" Boolean
+    `weekend-to-do-app` is the database name.
+
+2- Please include a `database.sql` text file in your repo that includes all of your `CREATE TABLE` queries. 
+        This is so we can re-create your database while testing your app.
+3- Create some sample rows for the database...put it in the database.sql file
+4- Set up react, with the two terminal set up...
+5- Begin coding
+
+---Big questions---
+o- Are we building the HTML into the index.html?  Or will we 'push it' to the DOM through .js? 
+        Are we using React for this?
+o- Is there some sort of npm test for this?

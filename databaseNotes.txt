@@ -1,0 +1,17 @@
+Through postico I started a new database with the name: 'weekend-to-do-app'
+(it was called out in the pool.js document)
+
+I created by table with the following info:
+CREATE TABLE "tasks" (
+    "id" SERIAL PRIMARY KEY,
+    "description" text,
+    "activetaskstatus" BOOLEAN
+);
+
+then I 'seeded' my table with three tasks - with this command set:
+
+INSERT INTO tasks ("description", "activetaskstatus")
+VALUES 
+('shoot Mariah Cary -metaphorically, not really.', 'TRUE'),
+('buy cotton candy', 'TRUE'),
+('Crawl that dungeon!', 'TRUE');
